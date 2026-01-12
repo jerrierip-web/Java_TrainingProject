@@ -1,0 +1,6 @@
+﻿# Maven build output
+target/
+
+# accidentally created folders
+專案/
+11/
