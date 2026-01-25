@@ -127,7 +127,7 @@ public class TestReconciliationTest {
 
     @Test
     public void testScenario7_CARD_CloseFailedAndSuccess_HIS_One() {
-        // CARD 付款方式 CLOSE_FAILED 一筆、SUCCESS 一筆，HIS 只有一筆（CLOSE_FAILED 的那筆因為關帳失敗，故沒有入
+        // CARD 付款方式 CLOSE_FAILED 一筆、SUCCESS 一筆，HIS 只有0筆（CLOSE_FAILED 的那筆因為關帳失敗，故沒有入
         // HIS）
         HISRecord his = new HISRecord("S005", "P015", "錢七", "M12", 9000);
         hisRepo.save(his);
