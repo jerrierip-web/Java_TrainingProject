@@ -11,7 +11,7 @@ public class IncomeStatisticsUseCase {
         Map<String, Map<PaymentWay, Integer>> aggregated = new HashMap<>();
         
         for (KIOSKPoint point : points) {
-            if (point.getProcess_status() == ProcessStatus.SUCCESS) {
+            if (point.getProcess_status() == ProcessStatus.SUCCESS || point.getProcess_status() == ProcessStatus.CLOSE_FAILED) {
                 String machineNo = point.getMachine_no();
                 PaymentWay paymentWay = point.getPayment_way();
                 int money = point.getMoney();
