@@ -82,15 +82,15 @@ public class KIOSKPoint {
 
     @Override
     public String toString() {
-        return "KIOSKPoint{" +
-                "patient_id='" + patient_id + '\'' +
-                ", patient_name='" + patient_name + '\'' +
-                ", machine_no='" + machine_no + '\'' +
-                ", division='" + division + '\'' +
-                ", money=" + money +
-                ", payment_way=" + payment_way +
-                ", process_status=" + process_status +
-                '}';
+        return "繳費機交易紀錄\n" +
+                "病歷號='" + patient_id + '\'' +
+                ", 病患姓名='" + patient_name + '\'' +
+                ", 機台號='" + machine_no + '\'' +
+                ", 科別='" + division + '\'' +
+                ", 金額=" + money +
+                ", 付款方式=" + payment_way +
+                ", 繳費狀態=" + process_status +
+                "\n";
     }
 
     public static void main(String[] args) {

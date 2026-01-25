@@ -4,9 +4,9 @@ import java.util.*;
 
 public class KIOSKRecordRepository {
 
-    private final Map<String, KIOSKRecords> storage = new LinkedHashMap<>();
+    private final Map<String, KIOSKRecord> storage = new LinkedHashMap<>();
 
-    public KIOSKRecords save(String id, KIOSKRecords record) {
+    public KIOSKRecord save(String id, KIOSKRecord record) {
         if (record == null) throw new IllegalArgumentException("record cannot be null");
         if (id == null || id.isEmpty()) {
             id = UUID.randomUUID().toString();
@@ -15,11 +15,11 @@ public class KIOSKRecordRepository {
         return record;
     }
 
-    public Optional<KIOSKRecords> findById(String id) {
+    public Optional<KIOSKRecord> findById(String id) {
         return Optional.ofNullable(storage.get(id));
     }
 
-    public List<KIOSKRecords> findAll() {
+    public List<KIOSKRecord> findAll() {
         return new ArrayList<>(storage.values());
     }
 

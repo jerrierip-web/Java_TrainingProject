@@ -74,12 +74,11 @@ public class HISRecord {
 
     @Override
     public String toString() {
-        return "HISRecord{" +
-                "serial_no='" + serial_no + '\'' +
-                ", patient_id='" + patient_id + '\'' +
-                ", patient_name='" + patient_name + '\'' +
-                ", machine_no='" + machine_no + '\'' +
-                ", money=" + money +
-                '}';
+        return "門診收入紀錄：\n" +
+                "門診號='" + serial_no + '\'' +
+                ", 病歷號='" + patient_id + '\'' +
+                ", 病患姓名='" + patient_name + '\'' +
+                ", 機台號='" + machine_no + '\'' +
+                ", 金額=" + money;
     }
 }

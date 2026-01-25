@@ -1,12 +1,12 @@
 package com.example;
 
-public class KIOSKRecords {
+public class KIOSKRecord {
 
     private String machine_no;
     private int money;
     private PaymentWay payment_way;
 
-    public KIOSKRecords(String machine_no, int money, PaymentWay payment_way) {
+    public KIOSKRecord(String machine_no, int money, PaymentWay payment_way) {
         this.machine_no = machine_no;
         setMoney(money);
         this.payment_way = payment_way;
@@ -37,11 +37,11 @@ public class KIOSKRecords {
 
     @Override
     public String toString() {
-        return "KIOSKRecords{" +
-                "machine_no='" + machine_no + '\'' +
-                ", money=" + money +
-                ", payment_way=" + payment_way +
-                '}';
+        return "繳費機交易紀錄：\n" +
+                "機台號='" + machine_no + '\'' +
+                ", 金額=" + money +
+                ", 付款方式=" + payment_way +
+                '\n';
     }
     public void setPayment_way(PaymentWay payment_way) {
         this.payment_way = payment_way;
