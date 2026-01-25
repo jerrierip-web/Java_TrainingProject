@@ -127,10 +127,7 @@ public class TestReconciliationTest {
 
     @Test
     public void testScenario7_CARD_CloseFailedAndSuccess_HIS_One() {
-        // CARD 付款方式 CLOSE_FAILED 一筆、SUCCESS 一筆，HIS 只有0筆（CLOSE_FAILED 的那筆因為關帳失敗，故沒有入
-        // HIS）
-        HISRecord his = new HISRecord("S005", "P015", "錢七", "M12", 9000);
-        hisRepo.save(his);
+        // CARD 付款方式 CLOSE_FAILED 一筆、SUCCESS 一筆，HIS 沒有資料（CARD 交易不會入 HIS）
 
         KIOSKPoint point1 = new KIOSKPoint("P015", "錢七", "M12", "皮膚科", 9000, PaymentWay.CARD, ProcessStatus.SUCCESS);
         KIOSKPoint point2 = new KIOSKPoint("P015", "錢七", "M12", "皮膚科", 9000, PaymentWay.CARD, ProcessStatus.CLOSE_FAILED);
@@ -138,8 +135,8 @@ public class TestReconciliationTest {
         pointRepo.save(null, point2);
 
         List<ReconciliationService.ReconciliationResult> results = reconciliationService.reconcile();
-        // HIS 匹配 SUCCESS，CARD 記錄不出現
-        System.out.println("=== 測試場景: CARD 付款方式 CLOSE_FAILED 一筆、SUCCESS 一筆，HIS 只有一筆 ===");
+        // CARD 記錄不出現在結果中
+        System.out.println("=== 測試場景: CARD 付款方式 CLOSE_FAILED 一筆、SUCCESS 一筆，HIS 沒有資料 ===");
         for (ReconciliationService.ReconciliationResult result : results) {
             System.out.println(result);
         }
